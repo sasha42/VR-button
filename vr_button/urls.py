@@ -23,5 +23,5 @@ from button import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^button/(?P<id>.*)/$', views.button_preview, name='button_preview'),
+    url(r'^button/(?P<id>.*)$', views.button_preview, name='button_preview'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
