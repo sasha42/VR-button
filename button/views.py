@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import Button
 
-# Create your views here.
+def button_preview(request, id):
+    order = get_object_or_404(Button, id=id)
+    return render(request, 'button/button.html', {'id': id})
