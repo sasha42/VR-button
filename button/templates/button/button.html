@@ -115,7 +115,7 @@ https://github.com/toji/webvr-samples/blob/gh-pages/XX-360-panorama.html
         init(true);
         vrDisplay.requestPresent([{ source: webglCanvas }]).then(function () {
         }, function () {
-          VRSamplesUtil.addError("requestPresent failed.", 2000);
+          //VRSamplesUtil.addError("requestPresent failed.", 2000);
         });
       }
 
@@ -213,7 +213,7 @@ https://github.com/toji/webvr-samples/blob/gh-pages/XX-360-panorama.html
       }
 
       function onAnimationFrame (t) {
-        stats.begin();
+        //stats.begin();
 
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
@@ -234,7 +234,7 @@ https://github.com/toji/webvr-samples/blob/gh-pages/XX-360-panorama.html
           } else {
             gl.viewport(0, 0, webglCanvas.width, webglCanvas.height);
             renderSceneView(poseMat, null);
-            stats.renderOrtho();
+            //stats.renderOrtho();
           }
         } else {
           window.requestAnimationFrame(onAnimationFrame);
@@ -245,10 +245,10 @@ https://github.com/toji/webvr-samples/blob/gh-pages/XX-360-panorama.html
           mat4.identity(viewMat);
           panorama.render(projectionMat, viewMat);
 
-          stats.renderOrtho();
+          //stats.renderOrtho();
         }
 
-        stats.end();
+        //stats.end();
       }
       })();
     </script>
