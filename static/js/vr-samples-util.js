@@ -87,15 +87,11 @@ window.VRSamplesUtil = (function () {
     var buttonContainer = document.getElementById("vr-sample-button-container");
     if (!buttonContainer) {
       buttonContainer = document.createElement("div");
-      buttonContainer.id = "vr-sample-button-container";
-      buttonContainer.style.fontFamily = "sans-serif";
+      buttonContainer.id = "fixed-action-btn";
+      buttonContainer.style.bottom = "45px";
+      buttonContainer.style.right = "24px";
       buttonContainer.style.position = "absolute";
       buttonContainer.style.zIndex = "999";
-      buttonContainer.style.left = "0";
-      buttonContainer.style.bottom = "0";
-      buttonContainer.style.right = "0";
-      buttonContainer.style.margin = "0";
-      buttonContainer.style.padding = "0";
       buttonContainer.align = "right";
       document.body.appendChild(buttonContainer);
     }
@@ -103,34 +99,11 @@ window.VRSamplesUtil = (function () {
   }
 
   function addButtonElement (message, key, icon) {
-    var buttonElement = document.createElement("div");
-    buttonElement.classList.add = "vr-sample-button";
-    buttonElement.style.color = "#FFF";
-    buttonElement.style.fontWeight = "bold";
-    buttonElement.style.backgroundColor = "#888";
-    buttonElement.style.borderRadius = "5px";
-    buttonElement.style.border = "3px solid #555";
-    buttonElement.style.position = "relative";
-    buttonElement.style.display = "inline-block";
-    buttonElement.style.margin = "0.5em";
-    buttonElement.style.padding = "0.75em";
-    buttonElement.style.cursor = "pointer";
-    buttonElement.align = "center";
+    var buttonElement = document.createElement("a");
+    buttonElement.className = "btn-floating btn-large red";
 
     if (icon) {
-      buttonElement.innerHTML = "<img src='" + icon + "'/><br/>" + message;
-    } else {
-      buttonElement.innerHTML = message;
-    }
-
-    if (key) {
-      var keyElement = document.createElement("span");
-      keyElement.classList.add = "vr-sample-button-accelerator";
-      keyElement.style.fontSize = "0.75em";
-      keyElement.style.fontStyle = "italic";
-      keyElement.innerHTML = " (" + key + ")";
-
-      buttonElement.appendChild(keyElement);
+      buttonElement.innerHTML = "<img src='" + icon + "' style='margin-top: 16px; width: 70%;' />";
     }
 
     getButtonContainer().appendChild(buttonElement);
