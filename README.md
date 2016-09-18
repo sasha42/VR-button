@@ -1,5 +1,8 @@
 # VR button for the web
-* This is a work in progress *
+ *hackathon project, probably wont work*
+
+![vr button demo](https://cloud.githubusercontent.com/assets/1775702/18615931/e2b3c090-7db2-11e6-8dcb-8b98f71f8505.gif)
+
 
 This is a button that can injected on any page which enables a VR Cardboard view in modern browsers. Works best for mobile.
 
